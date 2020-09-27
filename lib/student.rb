@@ -35,8 +35,8 @@ class Student
     INSERT INTO students (name, grade)
     VALUES (?, ?)
     SQL
-    pry.binding
     DB[:conn].execute(sql,name,grade)
+    @id = DB[:conn].execute("SELECT last_insert_row_id() FROM students")
   end
 
 end
