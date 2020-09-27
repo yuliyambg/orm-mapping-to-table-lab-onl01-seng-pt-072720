@@ -35,6 +35,7 @@ class Student
     INSERT INTO students (name, grade)
     VALUES (?, ?)
     SQL
+    pry.binding
     DB[:conn].execute(sql,name,grade)
   end
 
